@@ -1,0 +1,739 @@
+/* Colores del sitio */
+:root {
+    --rojo: #c62828;
+    --rojo-oscuro: #a51f1f;
+    --negro: #202020;
+    --gris: #666666;
+    --gris-claro: #eeeeee;
+    --fondo: #f5f5f5;
+    --blanco: #ffffff;
+}
+
+/* Globales */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: var(--negro);
+    background-color: var(--fondo);
+    font-family: 'Krub', Arial, sans-serif;
+    font-size: 16px;
+}
+
+a {
+    color: inherit;
+}
+
+/* Utilidades */
+.contenedor {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+/* Encabezado */
+.marca {
+    color: var(--negro);
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.marca span {
+    color: var(--rojo);
+}
+
+.encabezado {
+    background-color: var(--blanco);
+    border-bottom: 1px solid var(--gris-claro);
+}
+
+.barra-superior {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 76px;
+}
+
+.barra-superior p {
+    margin: 0;
+    font-weight: 600;
+}
+
+.salir {
+    color: var(--rojo);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Navegación */
+.navegacion {
+    background-color: var(--negro);
+}
+
+.enlaces-nav {
+    display: flex;
+    gap: 6px;
+}
+
+.enlaces-nav a {
+    padding: 14px 16px;
+    color: var(--blanco);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.enlaces-nav a:hover,
+.enlaces-nav a.activo {
+    background-color: var(--rojo);
+}
+
+/* Contenido de los paneles */
+.contenido {
+    min-height: calc(100vh - 180px);
+    padding-top: 38px;
+    padding-bottom: 50px;
+}
+
+.titulo-pagina {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.titulo-pagina h1,
+.titulo-pagina p {
+    margin-top: 0;
+}
+
+/* Títulos y texto */
+h1,
+h2,
+h3 {
+    color: var(--negro);
+}
+
+h1 {
+    margin-bottom: 8px;
+    font-size: 30px;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 21px;
+}
+
+h3 {
+    margin: 0;
+    font-size: 17px;
+}
+
+.titulo-pagina p,
+.texto-secundario,
+.tarjeta p,
+.seccion > p {
+    color: var(--gris);
+}
+
+.etiqueta {
+    margin-bottom: 8px;
+    color: var(--rojo) !important;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Botones */
+.boton {
+    display: inline-block;
+    padding: 12px 18px;
+    border: 0;
+    border-radius: 4px;
+    color: var(--blanco);
+    background-color: var(--rojo);
+    font: inherit;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: var(--rojo-oscuro);
+}
+
+.boton-secundario {
+    color: var(--rojo);
+    background-color: var(--blanco);
+    border: 1px solid var(--rojo);
+}
+
+.boton-secundario:hover {
+    color: var(--blanco);
+}
+
+/* Tarjetas de resumen */
+.resumen-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.tarjeta {
+    padding: 20px;
+    border: 1px solid #e2e2e2;
+    border-top: 3px solid var(--rojo);
+    border-radius: 4px;
+    background-color: var(--blanco);
+}
+
+.tarjeta h2 {
+    margin-bottom: 8px;
+}
+
+.tarjeta p:last-child {
+    margin-bottom: 0;
+}
+
+.tarjeta-alerta {
+    border-top-color: #d58a18;
+}
+
+/* Secciones */
+.seccion {
+    margin-top: 28px;
+    padding: 22px;
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+    background-color: var(--blanco);
+}
+
+.encabezado-seccion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.encabezado-seccion h2 {
+    margin-bottom: 0;
+}
+
+.encabezado-seccion .etiqueta {
+    margin-top: 0;
+}
+
+/* Tablas */
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 13px 12px;
+    border-bottom: 1px solid var(--gris-claro);
+    white-space: nowrap;
+}
+
+th {
+    color: var(--gris);
+    font-size: 13px;
+}
+
+td {
+    font-size: 14px;
+}
+
+.estado {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 3px;
+    color: #23623a;
+    background-color: #e6f3e9;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.estado-aviso {
+    color: #80550b;
+    background-color: #fff2d6;
+}
+
+.busqueda {
+    width: 220px;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font: inherit;
+}
+
+/* Rutina semanal del cliente */
+.rutina-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+.dia-rutina {
+    padding: 15px;
+    border: 1px solid var(--gris-claro);
+    border-radius: 4px;
+    background-color: #fafafa;
+}
+
+.dia-rutina h3 {
+    margin-bottom: 9px;
+    color: var(--rojo);
+}
+
+.grupos-musculares {
+    min-height: 42px;
+    margin: 0;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.dia-rutina ul {
+    padding-left: 18px;
+    color: var(--gris);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.nota {
+    margin-top: 14px;
+    color: var(--gris);
+    font-size: 13px;
+}
+
+/* Rutinas del entrenador */
+.rutinas-clientes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.fila-tarjeta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+/* Enlaces de acción */
+.enlace-rojo {
+    color: var(--rojo);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.enlace-rojo:hover {
+    text-decoration: underline;
+}
+
+/* Accesos del administrador */
+.accesos-panel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.accesos-panel a {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 16px;
+    border: 1px solid var(--gris-claro);
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.accesos-panel a:hover {
+    border-color: var(--rojo);
+}
+
+.accesos-panel span {
+    color: var(--gris);
+    font-size: 13px;
+}
+
+/* Opciones de membresía y pago */
+.planes-pago {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.plan-pago {
+    padding: 24px;
+    border: 1px solid #e2e2e2;
+    border-top: 3px solid var(--rojo);
+    border-radius: 4px;
+    background-color: var(--blanco);
+}
+
+.plan-pago h2 {
+    margin-bottom: 12px;
+}
+
+.precio {
+    margin: 0;
+    color: var(--rojo);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.precio span {
+    color: var(--gris);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.plan-pago ul {
+    min-height: 100px;
+    padding-left: 20px;
+    color: var(--gris);
+    line-height: 1.9;
+}
+
+.aviso-pago {
+    margin-top: 22px;
+    padding: 18px;
+    border-left: 4px solid var(--rojo);
+    background-color: var(--blanco);
+}
+
+.aviso-pago h2 {
+    margin-bottom: 8px;
+    font-size: 17px;
+}
+
+.aviso-pago p {
+    margin: 0;
+    color: var(--gris);
+    line-height: 1.6;
+}
+
+/* Formulario de registro */
+.formulario-registro {
+    padding: 24px;
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+    background-color: var(--blanco);
+}
+
+.formulario-registro fieldset {
+    margin: 0 0 22px;
+    padding: 18px;
+    border: 1px solid var(--gris-claro);
+}
+
+.formulario-registro legend {
+    padding: 0 8px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.campos-registro {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.campo-registro {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.campo-registro label {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.campo-registro input,
+.campo-registro select {
+    width: 100%;
+    min-height: 42px;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    background-color: var(--blanco);
+    font: inherit;
+}
+
+.campo-completo {
+    grid-column: 1 / -1;
+}
+
+.acciones-formulario {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.acciones-formulario button {
+    font-family: inherit;
+}
+
+.aviso-registro {
+    margin-top: 18px;
+}
+
+/* Pie de página */
+.pie {
+    padding: 18px 0;
+    color: var(--blanco);
+    background-color: var(--negro);
+}
+
+.pie .contenedor {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.pie p {
+    margin: 0;
+}
+
+.pie a {
+    color: var(--blanco);
+    text-decoration: none;
+}
+
+/* Inicio de sesión */
+.pagina-login {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #eeeeee;
+}
+
+.login {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 920px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: var(--blanco);
+    box-shadow: 0 4px 18px #00000018;
+}
+
+.login-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px;
+    color: var(--blanco);
+    background-color: var(--negro);
+}
+
+.login-info .marca {
+    color: var(--blanco);
+}
+
+.login-info h1 {
+    margin-top: 28px;
+    color: var(--blanco);
+    font-size: 34px;
+}
+
+.login-info > p:last-child {
+    color: #dddddd;
+    line-height: 1.7;
+}
+
+.login-formulario {
+    padding: 38px;
+}
+
+.login-formulario h2 {
+    margin-bottom: 5px;
+}
+
+.login-formulario > .texto-secundario {
+    margin-top: 0;
+    font-size: 14px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin: 18px 0;
+}
+
+.campo label {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.campo input {
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font: inherit;
+}
+
+.login-formulario form .boton {
+    width: 100%;
+}
+
+.accesos-demo {
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid var(--gris-claro);
+}
+
+.accesos-demo h3 {
+    margin-bottom: 6px;
+}
+
+.accesos-demo p {
+    margin-top: 0;
+    color: var(--gris);
+    font-size: 13px;
+}
+
+.enlaces-roles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.enlaces-roles a {
+    padding: 7px 10px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    color: var(--negro);
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.enlaces-roles a:hover {
+    border-color: var(--rojo);
+    color: var(--rojo);
+}
+
+.pie-login {
+    padding: 18px;
+    color: var(--gris);
+    font-size: 13px;
+    text-align: center;
+}
+
+.pie-login p {
+    margin: 0;
+}
+
+/* Diseño adaptable */
+@media (max-width: 850px) {
+    .rutina-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .barra-superior {
+        flex-wrap: wrap;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .barra-superior p {
+        order: 3;
+        width: 100%;
+    }
+
+    .enlaces-nav {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .enlaces-nav a {
+        flex: 1 1 40%;
+        text-align: center;
+    }
+
+    .titulo-pagina,
+    .encabezado-seccion {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .resumen-tarjetas,
+    .rutinas-clientes,
+    .accesos-panel,
+    .planes-pago,
+    .campos-registro {
+        grid-template-columns: 1fr;
+    }
+
+    .rutina-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .seccion {
+        padding: 16px;
+    }
+
+    .formulario-registro {
+        padding: 16px;
+    }
+
+    .formulario-registro fieldset {
+        padding: 14px;
+    }
+
+    .campo-completo {
+        grid-column: auto;
+    }
+
+    .busqueda {
+        width: 100%;
+    }
+
+    .login {
+        grid-template-columns: 1fr;
+        width: 92%;
+    }
+
+    .login-info {
+        padding: 28px;
+    }
+
+    .login-info h1 {
+        margin-top: 16px;
+        font-size: 27px;
+    }
+
+    .login-formulario {
+        padding: 26px;
+    }
+
+    .pie .contenedor {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 400px) {
+    .rutina-grid {
+        grid-template-columns: 1fr;
+    }
+}

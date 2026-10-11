@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntenseFit | Administración</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="encabezado"><div class="barra-superior contenedor"><a class="marca" href="index.html">INTENSE<span>FIT</span></a><p>Panel de administración</p><a class="salir" href="index.html">Cerrar sesión</a></div></header>
+    <nav class="navegacion"><div class="contenedor enlaces-nav"><a href="cliente.html">Cliente</a><a href="secretaria.html">Secretaría</a><a href="entrenador.html">Entrenador</a><a class="activo" href="administrador.html">Administración</a></div></nav>
+    <main class="contenedor contenido">
+        <div class="titulo-pagina"><div><p class="etiqueta">RESUMEN GENERAL</p><h1>Panel de administración</h1><p>Vista general de la actividad de IntenseFit.</p></div></div>
+        <section class="resumen-tarjetas">
+            <article class="tarjeta"><p class="etiqueta">CLIENTES</p><h2>128</h2><p>Registrados en el gimnasio</p></article>
+            <article class="tarjeta"><p class="etiqueta">MEMBRESÍAS</p><h2>12</h2><p>Por vencer este mes</p></article>
+            <article class="tarjeta"><p class="etiqueta">CITAS DE HOY</p><h2>8</h2><p>Entre entrenamiento y nutrición</p></article>
+        </section>
+        <section class="seccion">
+            <div class="encabezado-seccion"><div><p class="etiqueta">ACTIVIDAD</p><h2>Próximas citas</h2></div></div>
+            <div class="tabla-contenedor"><table><thead><tr><th>Cliente</th><th>Servicio</th><th>Profesional</th><th>Fecha y hora</th></tr></thead><tbody>
+                <tr><td>Jorge Salinas</td><td>Revisión de rutina</td><td>Carlos Méndez</td><td>Hoy · 09:00</td></tr>
+                <tr><td>Daniela Ruiz</td><td>Consulta de nutrición</td><td>Mariana Torres</td><td>Jueves 15 · 16:00</td></tr>
+                <tr><td>Paola García</td><td>Entrenamiento inicial</td><td>Carlos Méndez</td><td>Hoy · 17:00</td></tr>
+            </tbody></table></div>
+        </section>
+        <section class="seccion">
+            <div class="encabezado-seccion"><div><p class="etiqueta">ACCESOS</p><h2>Secciones del sistema</h2></div></div>
+            <div class="accesos-panel"><a href="secretaria.html"><strong>Membresías</strong><span>Revisar clientes y vigencias</span></a><a href="entrenador.html"><strong>Entrenamiento</strong><span>Consultar citas y rutinas</span></a><a href="cliente.html"><strong>Vista del cliente</strong><span>Ver el panel personal</span></a></div>
+        </section>
+        <p class="nota">Información ficticia para mostrar la propuesta. Las cifras no corresponden a un gimnasio real.</p>
+    </main>
+    <footer class="pie"><div class="contenedor"><a href="index.html">Volver al inicio</a></div></footer>
+</body>
+</html>

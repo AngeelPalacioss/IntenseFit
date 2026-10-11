@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntenseFit | Mi espacio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="encabezado">
+        <div class="barra-superior contenedor">
+            <a class="marca" href="index.html">INTENSE<span>FIT</span></a>
+            <p>Panel de cliente</p>
+            <a class="salir" href="index.html">Cerrar sesión</a>
+        </div>
+    </header>
+    <nav class="navegacion">
+        <div class="contenedor enlaces-nav">
+            <a class="activo" href="cliente.html">Mi espacio</a>
+            <a href="pagos.html">Pagos</a>
+            <a href="secretaria.html">Secretaría</a>
+            <a href="entrenador.html">Entrenador</a>
+            <a href="administrador.html">Administración</a>
+        </div>
+    </nav>
+
+    <main class="contenedor contenido">
+        <div class="titulo-pagina">
+            <div>
+                <p class="etiqueta">MI CUENTA</p>
+                <h1>Hola, Daniela</h1>
+                <p>Este es el resumen de tu actividad en IntenseFit.</p>
+            </div>
+            <a class="boton boton-secundario" href="#rutina">Ver rutina semanal</a>
+        </div>
+
+        <section class="resumen-tarjetas">
+            <article class="tarjeta">
+                <p class="etiqueta">MEMBRESÍA</p>
+                <h2>Plan mensual</h2>
+                <p>Vigente hasta el <strong>30 de noviembre de 2026</strong></p>
+                <a class="enlace-rojo" href="pagos.html">Renovar membresía</a>
+            </article>
+            <article class="tarjeta">
+                <p class="etiqueta">PRÓXIMA CITA</p>
+                <h2>Nutrición</h2>
+                <p>Jueves 15 de octubre · 16:00</p>
+                <p class="texto-secundario">Lic. Mariana Torres</p>
+            </article>
+        </section>
+
+        <section class="seccion" id="rutina">
+            <div class="encabezado-seccion">
+                <div>
+                    <p class="etiqueta">PLAN DE ENTRENAMIENTO</p>
+                    <h2>Rutina de la semana</h2>
+                </div>
+                <p class="texto-secundario">Asignada por Carlos Méndez</p>
+            </div>
+            <div class="rutina-grid">
+                <article class="dia-rutina"><h3>Lunes</h3><p class="grupos-musculares">Pecho, hombro y tríceps</p><ul><li>Press de banca</li><li>Elevaciones laterales</li><li>Extensión de tríceps</li></ul></article>
+                <article class="dia-rutina"><h3>Martes</h3><p class="grupos-musculares">Espalda y bíceps</p><ul><li>Jalón al pecho</li><li>Remo sentado</li><li>Curl de bíceps</li></ul></article>
+                <article class="dia-rutina"><h3>Miércoles</h3><p class="grupos-musculares">Pierna completa</p><ul><li>Sentadilla</li><li>Prensa</li><li>Elevación de pantorrilla</li></ul></article>
+                <article class="dia-rutina"><h3>Jueves</h3><p class="grupos-musculares">Pecho, hombro y tríceps</p><ul><li>Press inclinado</li><li>Press de hombro</li><li>Fondos asistidos</li></ul></article>
+                <article class="dia-rutina"><h3>Viernes</h3><p class="grupos-musculares">Espalda y bíceps</p><ul><li>Remo con mancuerna</li><li>Jalón con agarre cerrado</li><li>Curl martillo</li></ul></article>
+            </div>
+            <p class="nota">Rutina de ejemplo. Tu entrenador puede ajustar los ejercicios y las repeticiones.</p>
+        </section>
+
+        <section class="seccion">
+            <div class="encabezado-seccion">
+                <div><p class="etiqueta">AGENDA</p><h2>Mis próximas citas</h2></div>
+                <a class="enlace-rojo" href="#">Solicitar una cita</a>
+            </div>
+            <div class="tabla-contenedor">
+                <table>
+                    <thead><tr><th>Servicio</th><th>Profesional</th><th>Fecha</th><th>Hora</th></tr></thead>
+                    <tbody><tr><td>Consulta de nutrición</td><td>Mariana Torres</td><td>Jueves 15 de octubre</td><td>16:00</td></tr><tr><td>Seguimiento de rutina</td><td>Carlos Méndez</td><td>Lunes 19 de octubre</td><td>18:00</td></tr></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer class="pie"><div class="contenedor"><a href="index.html">Volver al inicio</a></div></footer>
+</body>
+</html>

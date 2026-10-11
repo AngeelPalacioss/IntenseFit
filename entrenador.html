@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntenseFit | Entrenador</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="encabezado"><div class="barra-superior contenedor"><a class="marca" href="index.html">INTENSE<span>FIT</span></a><p>Panel del entrenador</p><a class="salir" href="index.html">Cerrar sesión</a></div></header>
+    <nav class="navegacion"><div class="contenedor enlaces-nav"><a href="cliente.html">Cliente</a><a href="secretaria.html">Secretaría</a><a class="activo" href="entrenador.html">Entrenador</a><a href="administrador.html">Administración</a></div></nav>
+    <main class="contenedor contenido">
+        <div class="titulo-pagina"><div><p class="etiqueta">ENTRENAMIENTO</p><h1>Hola, Carlos</h1><p>Revisa tus citas y las rutinas asignadas a tus clientes.</p></div><a class="boton" href="#rutinas">Ver rutinas</a></div>
+        <section class="seccion">
+            <div class="encabezado-seccion"><div><p class="etiqueta">AGENDA</p><h2>Citas próximas</h2></div><p class="texto-secundario">Semana del 12 al 18 de octubre</p></div>
+            <div class="tabla-contenedor"><table><thead><tr><th>Hora</th><th>Cliente</th><th>Tipo de cita</th><th>Área</th></tr></thead><tbody>
+                <tr><td>09:00</td><td>Jorge Salinas</td><td>Revisión de rutina</td><td>Piso de entrenamiento</td></tr>
+                <tr><td>11:30</td><td>Daniela Ruiz</td><td>Seguimiento</td><td>Piso de entrenamiento</td></tr>
+                <tr><td>17:00</td><td>Paola García</td><td>Entrenamiento inicial</td><td>Piso de entrenamiento</td></tr>
+            </tbody></table></div>
+        </section>
+        <section class="seccion" id="rutinas">
+            <div class="encabezado-seccion"><div><p class="etiqueta">PLANES ASIGNADOS</p><h2>Rutinas de clientes</h2></div></div>
+            <div class="rutinas-clientes">
+                <article class="tarjeta"><div class="fila-tarjeta"><h3>Daniela Ruiz</h3><span class="estado">Activa</span></div><p>Rutina de 5 días · Actualizada el 5 de octubre</p><p class="texto-secundario">Lunes: pecho, hombro y tríceps · Martes: espalda y bíceps · Miércoles: pierna</p><a class="enlace-rojo" href="cliente.html">Consultar vista del cliente</a></article>
+                <article class="tarjeta"><div class="fila-tarjeta"><h3>Jorge Salinas</h3><span class="estado">Activa</span></div><p>Rutina de 4 días · Actualizada el 1 de octubre</p><p class="texto-secundario">Lunes: torso · Martes: pierna · Jueves: torso · Viernes: pierna</p><a class="enlace-rojo" href="#">Editar rutina</a></article>
+            </div>
+            <p class="nota">La asignación y edición de rutinas se habilitarán en una etapa posterior del proyecto.</p>
+        </section>
+        <section class="seccion"><div class="encabezado-seccion"><div><p class="etiqueta">NUTRICIÓN</p><h2>Agenda de la nutrióloga</h2></div></div><p>Mariana Torres atiende el jueves 15 de octubre. Daniela Ruiz · 16:00 · Consulta de seguimiento.</p></section>
+    </main>
+    <footer class="pie"><div class="contenedor"><a href="index.html">Volver al inicio</a></div></footer>
+</body>
+</html>

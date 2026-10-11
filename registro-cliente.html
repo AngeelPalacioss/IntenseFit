@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntenseFit | Registro de cliente</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="encabezado">
+        <div class="barra-superior contenedor">
+            <a class="marca" href="index.html">INTENSE<span>FIT</span></a>
+            <p>Registro de cliente</p>
+            <a class="salir" href="secretaria.html">Volver a secretaría</a>
+        </div>
+    </header>
+    <nav class="navegacion">
+        <div class="contenedor enlaces-nav">
+            <a href="cliente.html">Cliente</a>
+            <a class="activo" href="secretaria.html">Secretaría</a>
+            <a href="entrenador.html">Entrenador</a>
+            <a href="administrador.html">Administración</a>
+        </div>
+    </nav>
+
+    <main class="contenedor contenido">
+        <div class="titulo-pagina">
+            <div>
+                <p class="etiqueta">NUEVA CUENTA</p>
+                <h1>Registrar cliente</h1>
+                <p>Completa los datos personales y crea sus datos de acceso.</p>
+            </div>
+        </div>
+
+        <form class="formulario-registro" action="#" method="post">
+            <fieldset>
+                <legend>Datos personales</legend>
+                <div class="campos-registro">
+                    <div class="campo-registro">
+                        <label for="nombre">Nombre(s)</label>
+                        <input type="text" id="nombre" name="nombre" autocomplete="given-name" required>
+                    </div>
+                    <div class="campo-registro">
+                        <label for="apellidos">Apellidos</label>
+                        <input type="text" id="apellidos" name="apellidos" autocomplete="family-name" required>
+                    </div>
+                    <div class="campo-registro">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" autocomplete="tel" placeholder="10 dígitos" pattern="[0-9]{10}" title="Escribe 10 dígitos, sin espacios ni guiones" required>
+                    </div>
+                    <div class="campo-registro">
+                        <label for="nacimiento">Fecha de nacimiento</label>
+                        <input type="date" id="nacimiento" name="nacimiento" required>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Datos para iniciar sesión</legend>
+                <div class="campos-registro">
+                    <div class="campo-registro campo-completo">
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo" autocomplete="email" placeholder="cliente@correo.com" required>
+                    </div>
+                    <div class="campo-registro">
+                        <label for="contrasena">Contraseña</label>
+                        <input type="password" id="contrasena" name="contrasena" autocomplete="new-password" minlength="8" placeholder="Mínimo 8 caracteres" required>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Membresía inicial</legend>
+                <div class="campo-registro">
+                    <label for="membresia">Tipo de membresía</label>
+                    <select id="membresia" name="membresia" required>
+                        <option value="">Selecciona un plan</option>
+                        <option value="mensual">Mensual · $650 MXN</option>
+                        <option value="trimestral">Trimestral · $1,700 MXN</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <div class="acciones-formulario">
+                <a class="boton boton-secundario" href="secretaria.html">Cancelar</a>
+                <button class="boton" type="submit">Guardar registro</button>
+            </div>
+        </form>
+
+        <aside class="aviso-pago aviso-registro">
+            <h2>Registro de demostración</h2>
+            <p>El formulario permite capturar los datos y muestra validaciones básicas del navegador. Todavía no guarda clientes ni contraseñas; eso se implementará con PHP y base de datos. No ingreses datos personales reales en esta maqueta.</p>
+        </aside>
+    </main>
+
+    <footer class="pie">
+        <div class="contenedor">
+            <a href="secretaria.html">Volver a secretaría</a>
+        </div>
+    </footer>
+</body>
+</html>
