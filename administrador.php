@@ -46,6 +46,18 @@ $consultaClientes = mysqli_query(
      ORDER BY c.id_cliente DESC"
 );
 
+$consultaProductos = mysqli_query(
+    $conexion,
+    "SELECT pl.id_plan, pl.nombre, pl.duracion_meses, pl.precio, pl.activo,
+            COUNT(CASE WHEN pg.estado = 'pagado' THEN pg.id_pago END) AS ventas,
+            COALESCE(SUM(CASE WHEN pg.estado = 'pagado' THEN pg.monto ELSE 0 END), 0) AS ingresos
+     FROM planes_membresia AS pl
+     LEFT JOIN membresias AS m ON m.id_plan = pl.id_plan
+     LEFT JOIN pagos AS pg ON pg.id_membresia = m.id_membresia
+     GROUP BY pl.id_plan, pl.nombre, pl.duracion_meses, pl.precio, pl.activo
+     ORDER BY pl.duracion_meses"
+);
+
 $consultaPagos = mysqli_query(
     $conexion,
     "SELECT pg.id_pago, pg.monto, pg.estado, pg.fecha_pago,
@@ -101,6 +113,33 @@ $consultaPagos = mysqli_query(
                 <h2><?php echo escapar($ventasConfirmadas); ?></h2>
                 <p>Total: $<?php echo number_format((float)$ingresos, 2); ?> MXN</p>
             </article>
+        </section>
+
+        <section class="seccion">
+            <div class="encabezado-seccion">
+                <div><p class="etiqueta">PRODUCTOS</p><h2>Planes de membresía</h2></div>
+            </div>
+            <div class="tabla-contenedor">
+                <table>
+                    <thead><tr><th>ID</th><th>Producto</th><th>Duración</th><th>Precio</th><th>Ventas</th><th>Total vendido</th><th>Estado</th></tr></thead>
+                    <tbody>
+                        <?php if (mysqli_num_rows($consultaProductos) == 0) { ?>
+                            <tr><td colspan="7">No hay productos registrados.</td></tr>
+                        <?php } ?>
+                        <?php while ($producto = mysqli_fetch_assoc($consultaProductos)) { ?>
+                            <tr>
+                                <td><?php echo escapar($producto["id_plan"]); ?></td>
+                                <td><?php echo escapar($producto["nombre"]); ?></td>
+                                <td><?php echo escapar($producto["duracion_meses"]); ?> mes(es)</td>
+                                <td>$<?php echo number_format((float)$producto["precio"], 2); ?> MXN</td>
+                                <td><?php echo escapar($producto["ventas"]); ?></td>
+                                <td>$<?php echo number_format((float)$producto["ingresos"], 2); ?> MXN</td>
+                                <td><span class="estado <?php echo $producto["activo"] ? "" : "estado-aviso"; ?>"><?php echo $producto["activo"] ? "Disponible" : "Inactivo"; ?></span></td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
         <section class="seccion">

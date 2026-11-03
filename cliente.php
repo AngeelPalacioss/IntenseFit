@@ -35,6 +35,19 @@ if (!$cliente) {
     exit;
 }
 
+$consultaUltimoPago = mysqli_prepare(
+    $conexion,
+    "SELECT pg.id_pago
+     FROM pagos AS pg
+     INNER JOIN membresias AS m ON m.id_membresia = pg.id_membresia
+     WHERE m.id_cliente = ? AND pg.estado = 'pagado'
+     ORDER BY pg.fecha_pago DESC, pg.id_pago DESC LIMIT 1"
+);
+mysqli_stmt_bind_param($consultaUltimoPago, "i", $idCliente);
+mysqli_stmt_execute($consultaUltimoPago);
+$ultimoPago = mysqli_fetch_assoc(mysqli_stmt_get_result($consultaUltimoPago));
+mysqli_stmt_close($consultaUltimoPago);
+
 $estado = $cliente["estado"] ?? "sin membresía";
 if ($estado == "activa" && !empty($cliente["fecha_fin"])) {
     if ($cliente["fecha_fin"] < date("Y-m-d")) {
@@ -70,7 +83,12 @@ $consultaPlanes = mysqli_query(
                 <h1>Hola, <?php echo escapar($cliente["nombres"] . " " . $cliente["apellidos"]); ?></h1>
                 <p>Consulta el estado actual de tu cuenta en IntenseFit.</p>
             </div>
-            <a class="boton boton-secundario" href="membresias.php">Ver planes</a>
+            <div class="acciones-panel">
+                <a class="boton boton-secundario" href="membresias.php">Ver planes</a>
+                <?php if ($ultimoPago) { ?>
+                    <a class="boton" href="recibo.php?id_pago=<?php echo (int)$ultimoPago["id_pago"]; ?>">Ver recibo PDF</a>
+                <?php } ?>
+            </div>
         </div>
 
         <?php if ($mensaje != "") { ?><p class="mensaje-exito"><?php echo escapar($mensaje); ?></p><?php } ?>

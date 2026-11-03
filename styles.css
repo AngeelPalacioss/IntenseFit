@@ -118,6 +118,12 @@ a {
     margin-top: 0;
 }
 
+.acciones-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 /* Títulos y texto */
 h1,
 h2,
