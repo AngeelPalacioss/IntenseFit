@@ -1,0 +1,3 @@
+IntenseFit utiliza FPDF 1.9 para generar recibos PDF desde PHP.
+Sitio oficial y términos de uso: https://www.fpdf.org/en/license.php
+La biblioteca se encuentra en la carpeta fpdf/.

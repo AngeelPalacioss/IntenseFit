@@ -69,6 +69,13 @@ a {
     text-decoration: none;
 }
 
+.usuario-menu {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 14px;
+}
+
 /* Navegación */
 .navegacion {
     background-color: var(--negro);
@@ -428,6 +435,15 @@ td {
     line-height: 1.6;
 }
 
+.paypal-boton {
+    max-width: 420px;
+    margin: 22px 0 10px;
+}
+
+.pago-resumen > .boton {
+    margin-top: 18px;
+}
+
 /* Formulario de registro */
 .formulario-registro {
     padding: 24px;
@@ -595,20 +611,34 @@ td {
     width: 100%;
 }
 
-.accesos-demo {
+.configuracion-inicial {
     margin-top: 24px;
     padding-top: 18px;
     border-top: 1px solid var(--gris-claro);
 }
 
-.accesos-demo h3 {
+.configuracion-inicial h3 {
     margin-bottom: 6px;
 }
 
-.accesos-demo p {
+.configuracion-inicial p {
     margin-top: 0;
     color: var(--gris);
     font-size: 13px;
+}
+
+.mensaje-error,
+.mensaje-exito {
+    margin: 0 0 18px;
+    padding: 12px 14px;
+    border-left: 4px solid var(--rojo);
+    color: var(--negro);
+    background-color: #fff0f0;
+}
+
+.mensaje-exito {
+    border-left-color: #438454;
+    background-color: #edf7ef;
 }
 
 .enlaces-roles {
@@ -659,6 +689,13 @@ td {
     .barra-superior p {
         order: 3;
         width: 100%;
+    }
+
+    .usuario-menu {
+        margin-left: auto;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 3px;
     }
 
     .enlaces-nav {
